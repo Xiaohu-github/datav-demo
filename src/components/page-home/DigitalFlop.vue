@@ -118,8 +118,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(6, 30, 93, 0.5);
-  // background-color: rgba(19, 25, 47, 0.6);
+  // background-color: rgba(6, 30, 93, 0.5);
+  background-color: rgba(19, 25, 47, 0.6);
   border-radius: 10px;
 
   .dv-decoration-10 {

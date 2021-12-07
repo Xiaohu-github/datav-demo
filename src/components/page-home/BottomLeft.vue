@@ -5,7 +5,7 @@
         <span>
           <icon name="chart-bar" class="text-icon"></icon>
         </span>
-        <span class="fs-xl text mx-2">每月垃圾处理量</span>
+        <span class="fs-xl text mx-2">每月垃圾接收处理统计图</span>
         <dv-decoration-3 class="dv-dec-3" />
       </div>
       <div>

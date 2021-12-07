@@ -52,16 +52,16 @@
 </template>
 
 <script>
-import Headline from "@/components/Headline2.vue";
-import DigitalFlop from "@/components/DigitalFlop.vue";
-import TopLeft from "@/components/TopLeft.vue";
-import TopLeft2 from "@/components/TopLeft2.vue";
-import Test from "@/components/Test.vue";
-import CenterRight2 from "@/components/CenterRight2.vue";
-import BottomLeft from "@/components/BottomLeft.vue";
-import BottomRight from "@/components/BottomRight.vue";
-import TopRight from "@/components/TopRight.vue";
-import TopRight2 from "@/components/TopRight2.vue";
+import Headline from "@/components/page-home/Headline2.vue";
+import DigitalFlop from "@/components/page-home/DigitalFlop.vue";
+import TopLeft from "@/components/page-home/TopLeft.vue";
+import TopLeft2 from "@/components/page-home/TopLeft2.vue";
+import Test from "@/components/page-home/Test.vue";
+import CenterRight2 from "@/components/page-home/CenterRight2.vue";
+import BottomLeft from "@/components/page-home/BottomLeft.vue";
+import BottomRight from "@/components/page-home/BottomRight.vue";
+import TopRight from "@/components/page-home/TopRight.vue";
+import TopRight2 from "@/components/page-home/TopRight2.vue";
 
 export default {
   name: "Home",
@@ -105,7 +105,7 @@ export default {
   #dv-full-screen-container {
     background-image: url("../assets/bg.png");
     background-size: 100% 100%;
-    box-shadow: 0 0 3px blue;
+    // box-shadow: 0 0 3px blue;
     display: flex;
     flex-direction: column;
 
@@ -118,7 +118,7 @@ export default {
         box-sizing: border-box;
         padding: 10px;
         display: grid;
-        grid-template-columns: 1fr 3fr 8fr 3fr 3fr;
+        grid-template-columns: 2fr 4fr 8fr 3fr 3fr;
         .top-left .top-right {
           width: 90%;
         }

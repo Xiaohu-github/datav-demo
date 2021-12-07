@@ -6,12 +6,12 @@
     <div class="center-title">{{title}}</div>
     <div class="header-toolbar">
       <div class="d-flex flex-div">
-        <div class="left-logo"> <img src="@/assets/logo-bai.png" style="width: 110px;"></div>
+        <div class="left-logo"> <img src="@/assets/logo-1.png" style="width: 30px;">上海卓太环保</div>
         <div class="right-bar d-flex">
           <span class="text">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</span>
           <a :title="isFullscreen?'退出全屏':'全屏'" class="button" @click="screen">
-            <icon v-if="!isFullscreen" name="expand-alt" class="icon"></icon>
-            <icon v-else name="compress-alt" class="icon"></icon>
+            <icon v-if="!isFullscreen" name="expand" class="icon"></icon>
+            <icon v-else name="compress" class="icon"></icon>
           </a>
         </div>
       </div>
@@ -21,7 +21,7 @@
 
 <script>
 import screenfull from "screenfull";
-import { formatTime } from "../utils/index.js";
+import { formatTime } from "@/utils/index.js";
 
 export default {
   name: "TopHeader",
@@ -47,8 +47,8 @@ export default {
   mounted() {
     this.timeFn();
   },
-  beforeDestroy () {
-    clearInterval(this.timing)
+  beforeDestroy() {
+    clearInterval(this.timing);
   },
   methods: {
     timeFn() {
@@ -90,15 +90,22 @@ export default {
       padding: 7px 50px 0px 45px;
       align-items: center;
       justify-content: space-between;
-
+      .left-logo {
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        width: 138px;
+         color: #e0e1e5;
+        justify-content: space-between;
+      }
       .right-bar {
         align-items: center;
-        width: 250px;
+        width: 235px;
         justify-content: space-between;
         color: #e0e1e5;
 
         .text {
-          font-weight: bold;
+          // font-weight: bold;
         }
         .button {
           height: 30px;
@@ -130,7 +137,7 @@ export default {
   .center-title {
     position: absolute;
     font-size: 28px;
-    font-weight: bold;
+    // font-weight: bold;
     left: 50%;
     top: 15px;
     transform: translateX(-50%);
