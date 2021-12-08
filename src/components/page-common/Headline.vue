@@ -1,12 +1,12 @@
 <template>
   <div id="top-header">
     <dv-decoration-8 class="header-left-decoration" :color="['#2252A1', '#00ACE5']" />
-    <dv-decoration-5 class="header-center-decoration" :color="['#2252A1', '#00ACE5']" />
+    <dv-decoration-5 class="header-center-decoration" :color="['#2252A1', '#00ACE5']" dur="5"/>
     <dv-decoration-8 class="header-right-decoration" :color="['#2252A1', '#00ACE5']" :reverse="true" />
     <div class="center-title">{{title}}</div>
     <div class="header-toolbar">
       <div class="d-flex flex-div">
-        <div class="left-logo"> <img src="@/assets/logo-1.png" style="width: 30px;">上海卓太环保</div>
+        <div class="left-logo"> <img src="@/assets/logo-1.png" style="width: 30px;">卓太环保</div>
         <div class="right-bar d-flex">
           <span class="text">{{ dateYear }} {{ dateWeek }} {{ dateDay }}</span>
           <a :title="isFullscreen?'退出全屏':'全屏'" class="button" @click="screen">
@@ -76,7 +76,7 @@ export default {
 #top-header {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 85px;
   display: flex;
   justify-content: space-between;
   flex-shrink: 0;
@@ -87,15 +87,15 @@ export default {
     width: 100%;
 
     .flex-div {
-      padding: 7px 50px 0px 45px;
+      padding: 7px 50px 0px 57px;
       align-items: center;
       justify-content: space-between;
       .left-logo {
         display: flex;
         align-items: center;
         font-size: 17px;
-        width: 138px;
-         color: #e0e1e5;
+        width: 105px;
+        color: #e0e1e5;
         justify-content: space-between;
       }
       .right-bar {

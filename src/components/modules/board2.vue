@@ -1,6 +1,6 @@
 <template>
   <div class="bottom-data">
-    <dv-border-box-8 :reverse="true">
+    <dv-border-box-6 :color="['#2252A1', '#00ACE5']">
       <div class="d-flex" style="width: 99%; flex-wrap: wrap; margin-left: 2%;">
         <div class="mt-2 item-box" v-bind:style="{width:width}" v-for="(item, index) in numberData" :key="index">
           <p class="text"> {{ item.text }} </p>
@@ -8,7 +8,7 @@
           <div class="unit">{{ item.unit }}</div>
         </div>
       </div>
-    </dv-border-box-8>
+    </dv-border-box-6>
   </div>
 </template>
 

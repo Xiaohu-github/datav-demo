@@ -6,11 +6,11 @@
           <span>
             <icon name="chart-pie" class="text-icon"></icon>
           </span>
-          <span class="fs-xl text mx-2">药耗指标-总量(万元)</span>
+          <span class="fs-xl text mx-2">药耗指标-单耗(元/吨)</span>
           <dv-decoration-3 class="dv-dec-3" />
         </div>
       </div>
-      <Board-2 :numberData='numberData' />
+      <!-- <Board-2 :numberData='numberData' /> -->
       <div class="d-flex jc-center">
         <Chart-pie :option='option' />
       </div>
@@ -32,7 +32,7 @@ export default {
       numberData: [
         {
           number: {
-            number: [15505],
+            number: [1550.5],
             toFixed: 1,
             textAlign: "center",
             content: "{nt}",
@@ -41,11 +41,11 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "药耗总量",
+          text: "总药剂单耗",
         },
         {
           number: {
-            number: [10853.5],
+            number: [1085.5],
             toFixed: 1,
             textAlign: "center",
             content: "{nt}",
@@ -59,7 +59,7 @@ export default {
         },
         {
           number: {
-            number: [4651.5],
+            number: [465],
             toFixed: 1,
             textAlign: "center",
             content: "{nt}",

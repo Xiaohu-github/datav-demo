@@ -33,7 +33,6 @@ export default {
         {
           number: {
             number: [15505],
-            toFixed: 1,
             textAlign: "center",
             content: "{nt}",
             style: {
@@ -46,7 +45,6 @@ export default {
         {
           number: {
             number: [10853.5],
-            toFixed: 1,
             textAlign: "center",
             content: "{nt}",
             style: {
@@ -60,7 +58,44 @@ export default {
         {
           number: {
             number: [4651.5],
-            toFixed: 1,
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fill: "#D54EB4",
+              fontWeight: "bold",
+            },
+          },
+          text: "沼气预处理",
+        },
+        {
+          number: {
+            number: [1550.5],
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fontWeight: "bold",
+            },
+          },
+          text: "总药剂单耗",
+        },
+        {
+          number: {
+            number: [1085.5],
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fill: "#32C5E9",
+              fontWeight: "bold",
+            },
+          },
+          text: "垃圾处置",
+        },
+        {
+          number: {
+            number: [465],
             textAlign: "center",
             content: "{nt}",
             style: {

@@ -17,12 +17,10 @@
               </dv-border-box-12>
             </div>
             <div class="top-middle">
-              <!-- <dv-border-box-12> -->
-                <div>
-                  <Digital-flop />
-                  <Test />
-                </div>
-              <!-- </dv-border-box-12> -->
+              <div>
+                <TopMiddleBoard />
+                <TopMiddleBottom />
+              </div>
             </div>
             <div class="top-right">
               <dv-border-box-12>
@@ -57,24 +55,26 @@
 
 <script>
 import Headline from "@/components/page-common/Headline.vue";
+import TopMiddleBoard from "@/components/page-home2/TopMiddleBoard.vue";
+import TopMiddleBottom from "@/components/page-home2/TopMiddleBottom.vue";
 
-import DigitalFlop from "@/components/page-home/DigitalFlop.vue";
-import TopLeft from "@/components/page-home/TopLeft.vue";
-import TopLeft2 from "@/components/page-home/TopLeft2.vue";
-import Test from "@/components/page-home/Test.vue";
+import TopLeft from "@/components/page-home2/TopLeft.vue";
+import TopLeft2 from "@/components/page-home2/TopLeft2.vue";
+
+import TopRight from "@/components/page-home2/TopRight.vue";
+import TopRight2 from "@/components/page-home2/TopRight2.vue";
+
 import CenterRight2 from "@/components/page-home/CenterRight2.vue";
 import BottomLeft from "@/components/page-home/BottomLeft.vue";
 import BottomRight from "@/components/page-home/BottomRight.vue";
-import TopRight from "@/components/page-home/TopRight.vue";
-import TopRight2 from "@/components/page-home/TopRight2.vue";
 
 export default {
   name: "Home",
   components: {
     Headline,
-    DigitalFlop,
+   TopMiddleBoard,
     TopLeft,
-    Test,
+    TopMiddleBottom,
     CenterRight2,
     BottomLeft,
     BottomRight,
@@ -122,11 +122,11 @@ export default {
       }
       .mc-down {
         box-sizing: border-box;
-        padding: 10px;
+        padding:0px 10px 10px 10px;
         display: grid;
         grid-template-columns: 6fr 6fr;
         .top-left .top-right {
-          width: 90%;
+          width: 100%;
         }
       }
     }

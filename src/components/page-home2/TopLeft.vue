@@ -6,11 +6,11 @@
           <span>
             <icon name="chart-pie" class="text-icon"></icon>
           </span>
-          <span class="fs-xl text mx-2">药耗指标-总量(万元)</span>
+          <span class="fs-xl text mx-2">沼气发电指标</span>
           <dv-decoration-3 class="dv-dec-3" />
         </div>
       </div>
-      <Board-2 :numberData='numberData' />
+      <Board-2 :numberData='numberData' width="32%" />
       <div class="d-flex jc-center">
         <Chart-pie :option='option' />
       </div>
@@ -32,7 +32,7 @@ export default {
       numberData: [
         {
           number: {
-            number: [15505],
+            number: [15],
             toFixed: 1,
             textAlign: "center",
             content: "{nt}",
@@ -41,35 +41,35 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "药耗总量",
+          text: "沼气发电量",
         },
         {
           number: {
-            number: [10853.5],
+            number: [1144],
             toFixed: 1,
             textAlign: "center",
             content: "{nt}",
             style: {
               fontSize: 18,
-              fill: "#32C5E9",
+              fill: "#03a9f4",
               fontWeight: "bold",
             },
           },
-          text: "垃圾处置",
+          text: "自用电量",
         },
         {
           number: {
-            number: [4651.5],
+            number: [361],
             toFixed: 1,
             textAlign: "center",
             content: "{nt}",
             style: {
               fontSize: 18,
-              fill: "#D54EB4",
+              fill: "#ff9800",
               fontWeight: "bold",
             },
           },
-          text: "沼气预处理",
+          text: "并网销售",
         },
       ],
       option: {
@@ -77,11 +77,11 @@ export default {
           {
             type: "pie",
             data: [
-              { name: "垃圾处置", value: 10853.5, radius: ["50%", "35%"] },
-              { name: "沼气预处理", value: 4651.5, radius: ["45%", "35%"] },
+              { name: "自用电量", value: 60, radius: ["30%", "40%"] },
+              { name: "并网销售", value: 40, radius: ["32%", "45%"] },
             ],
             outsideLabel: {
-              labelLineEndLength: 25,
+              labelLineEndLength: 10,
               formatter: "{percent}%\n{name}",
               style: {
                 fill: "#fff",
@@ -91,7 +91,7 @@ export default {
           {
             name: "decoration ring",
             type: "pie",
-            data: [{ value: 10, radius: ["55%", "56%"] }],
+            data: [{ value: 10, radius: ["50%", "56%"] }],
             outsideLabel: {
               show: false,
             },
@@ -111,7 +111,7 @@ export default {
             },
           },
         ],
-        color: ["#32C5E9", "#D54EB4"],
+        color: ["#03a9f4", "#ff9800"],
       },
     };
   },

@@ -1,20 +1,18 @@
 <template>
-  <dv-border-box-6 :reverse="true" :color="['#2252A1', '#00ACE5']" style="width:100%;height:100px;">
-    <div class="digital-flop-F">
-      <div class="digital-flop-item" v-for="item in digitalFlopData" :key="item.title">
-        <div class="digital-flop-title">{{ item.title }}</div>
-        <div class="digital-flop">
-          <dv-digital-flop :config="item.number" style="width:100px;height:50px;" />
-          <div class="unit">{{ item.unit }}</div>
-        </div>
-      </div>
+  <dv-border-box-6 :reverse="true" :color="['#2252A1', '#00ACE5']" style="padding-bottom: 10px;">
+    <div style="width:100%;height:145px;">
+      <Board :item='digitalFlopData' />
     </div>
   </dv-border-box-6>
 </template>
 
 <script>
+import Board from "@/components/modules/board.vue";
 export default {
-  name: "DigitalFlop",
+  name: "MiddleBoard",
+  components: {
+    Board,
+  },
   data() {
     return {
       digitalFlopData: [],
@@ -64,6 +62,19 @@ export default {
           unit: "吨",
         },
         {
+          title: "沼渣外运量",
+          number: {
+            number: [randomExtend(20000, 30000)],
+            content: "{nt}",
+            textAlign: "right",
+            style: {
+              fill: "#00ACE5",
+              fontWeight: "bold",
+            },
+          },
+          unit: "吨",
+        },
+        {
           title: "垃圾渗液外排量",
           number: {
             number: [randomExtend(20000, 30000)],
@@ -101,9 +112,7 @@ export default {
   },
   mounted() {
     const { createData } = this;
-
     createData();
-
     setInterval(createData, 30000);
   },
 };
@@ -118,7 +127,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color: rgba(6, 30, 93, 0.5);
   background-color: rgba(19, 25, 47, 0.6);
   border-radius: 10px;
 

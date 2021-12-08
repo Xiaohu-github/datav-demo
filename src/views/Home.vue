@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import Headline from "@/components/page-home/Headline2.vue";
+import Headline from "@/components/page-common/Headline.vue";
 import DigitalFlop from "@/components/page-home/DigitalFlop.vue";
 import TopLeft from "@/components/page-home/TopLeft.vue";
 import TopLeft2 from "@/components/page-home/TopLeft2.vue";

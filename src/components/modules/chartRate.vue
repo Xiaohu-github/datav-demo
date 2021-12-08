@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- 通过率/达标率 -->
     <Echart :options="options" :id="id" height="100px" width="100px"></Echart>
   </div>
 </template>
@@ -22,10 +21,16 @@ export default {
       required: true,
       default: "chartRate",
     },
-    tips: {
+    dataValue: {
       type: Number,
       required: true,
       default: 50,
+    },
+    title: {
+      type: String,
+      default() {
+        return "aaa";
+      },
     },
     colorObj: {
       type: Object,
@@ -44,23 +49,37 @@ export default {
     },
   },
   watch: {
-    // tips 是会变更的数据，所以进行监听
-    tips: {
+    dataValue: {
       handler(newData) {
-        console.log(newData);
-        debugger
+        const { colorObj } = this;
+        const dataArray = [];
+        newData.forEach((item, index) => {
+          console.log(item);
+          this.$set(dataArray, index, {
+            value: item.value,
+            name: item.name,
+            itemStyle: {
+              normal: {
+                color: item.style.color,
+                shadowBlur: item.style.shadowBlur,
+                shadowColor: item.style.shadowColor,
+              },
+            },
+          });
+        });
+
         this.options = {
+          tooltip: {
+            trigger: "item",
+          },
           title: {
-            text: newData * 1 + "%",
+            text: this.title,
             x: "center",
             y: "center",
             textStyle: {
-              color: this.colorObj.textStyle,
-              fontSize: 16,
+              color: colorObj.textStyle,
+              fontSize: 15,
             },
-          },
-          tooltip: {
-            trigger: "item",
           },
           series: [
             {
@@ -68,36 +87,22 @@ export default {
               radius: ["75%", "80%"],
               center: ["50%", "50%"],
               hoverAnimation: true,
-              color: this.colorObj.series.color,
+              color: colorObj.series.color,
               label: {
-                normal: {
+                show: false,
+                position: "center",
+              },
+              emphasis: {
+                label: {
                   show: false,
+                  fontSize: "15",
+                  fontWeight: "bold",
                 },
               },
-              data: [
-                {
-                  value: newData,
-                  itemStyle: {
-                    normal: {
-                      color: this.colorObj.series.dataColor.normal,
-                      shadowBlur: 10,
-                      shadowColor: this.colorObj.series.dataColor.shadowColor,
-                    },
-                  },
-                },
-                {
-                  value: 100 - newData,
-                  itemStyle: {
-                    normal: {
-                      shadowBlur: 10,
-                    },
-                  },
-                },
-              ],
+              data: dataArray,
             },
           ],
         };
-        console.log(this.options);
       },
       immediate: true,
       deep: true,
