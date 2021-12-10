@@ -47,8 +47,6 @@ export default {
     // tips 是会变更的数据，所以进行监听
     tips: {
       handler(newData) {
-        console.log(newData);
-        debugger
         this.options = {
           title: {
             text: newData * 1 + "%",

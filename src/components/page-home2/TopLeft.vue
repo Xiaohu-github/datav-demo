@@ -10,7 +10,7 @@
           <dv-decoration-3 class="dv-dec-3" />
         </div>
       </div>
-      <Board-2 :numberData='numberData' width="32%" />
+      <Board-2 :numberData='numberData' width="50%" />
       <div class="d-flex jc-center">
         <Chart-pie :option='option' />
       </div>
@@ -32,6 +32,19 @@ export default {
       numberData: [
         {
           number: {
+            number: [155],
+            toFixed: 1,
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fontWeight: "bold",
+            },
+          },
+          text: "沼气发电量(度)",
+        },
+        {
+          number: {
             number: [15],
             toFixed: 1,
             textAlign: "center",
@@ -41,7 +54,7 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "沼气发电量",
+          text: "m³沼气发电(度/m³)",
         },
         {
           number: {
@@ -55,7 +68,7 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "自用电量",
+          text: "自用电量(度)",
         },
         {
           number: {
@@ -69,7 +82,7 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "并网销售",
+          text: "并网销售(度)",
         },
       ],
       option: {
@@ -118,17 +131,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-$box-width: 100%;
-$box-height: 100%;
-
+<style lang="less" scoped>
 #centerRight2 {
   padding: 16px;
-  height: $box-height;
-  width: $box-width;
+  height: 100%;
+  width: 280px;
   border-radius: 10px;
   .bg-color-black {
-    height: calc($box-height - 10px);
+    height: calc(100% - 10px);
     border-radius: 10px;
     .dv-dec-3 {
       position: relative;
@@ -145,7 +155,7 @@ $box-height: 100%;
     overflow: hidden;
     .dv-cap-chart {
       width: 100%;
-      height: calc($box-height - 0px);
+      height: 100%;
     }
   }
 }

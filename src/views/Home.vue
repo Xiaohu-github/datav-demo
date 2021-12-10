@@ -35,12 +35,12 @@
           <div class="mc-down">
             <div class="top-right">
               <dv-border-box-12>
-                <Bottom-right />
+                <Bottom-left />
               </dv-border-box-12>
             </div>
             <div class="top-right">
               <dv-border-box-12>
-                <Bottom-left />
+                <Bottom-right />
               </dv-border-box-12>
             </div>
           </div>

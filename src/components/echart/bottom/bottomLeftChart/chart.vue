@@ -1,19 +1,14 @@
 <template>
   <div>
     <!-- 年度开工率 -->
-    <Echart
-      :options="options"
-      id="bottomLeftChart"
-      height="480px"
-      width="100%"
-    ></Echart>
+    <Echart :options="options" id="bottomLeftChart" height="480px" width="100%"></Echart>
   </div>
 </template>
 
 <script>
-import Echart from '@/common/echart'
+import Echart from "@/common/echart";
 export default {
-  data () {
+  data() {
     return {
       options: {},
     };
@@ -24,12 +19,12 @@ export default {
   props: {
     cdata: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
   },
   watch: {
     cdata: {
-      handler (newData) {
+      handler(newData) {
         this.options = {
           title: {
             text: "",
@@ -41,56 +36,57 @@ export default {
               type: "shadow",
               label: {
                 show: true,
-                backgroundColor: "#7B7DDC"
-              }
-            }
+                backgroundColor: "#7B7DDC",
+              },
+            },
           },
           legend: {
             data: ["垃圾接收处理量", "厌氧消化处置量", "筛上物外运量"],
             textStyle: {
-              color: "#B4B4B4"
+              color: "#B4B4B4",
             },
-            top: "0%"
+            top: "0%",
           },
           grid: {
             x: "8%",
             width: "88%",
-            y: "4%"
+            y: "4%",
           },
           xAxis: {
             data: newData.category,
             axisLine: {
               lineStyle: {
-                color: "#B4B4B4"
-              }
+                color: "#B4B4B4",
+              },
             },
             axisTick: {
-              show: false
-            }
+              show: false,
+            },
           },
           yAxis: [
             {
               splitLine: { show: false },
               axisLine: {
                 lineStyle: {
-                  color: "#B4B4B4"
-                }
+                  color: "#B4B4B4",
+                },
               },
+
               axisLabel: {
-                formatter: "{value} "
-              }
+                formatter: "{value} ",
+              },
             },
             {
               splitLine: { show: false },
               axisLine: {
                 lineStyle: {
-                  color: "#B4B4B4"
-                }
+                  color: "#B4B4B4",
+                },
               },
               axisLabel: {
-                formatter: "{value} "
-              }
-            }
+                formatter: "{value} ",
+              },
+            },
           ],
           series: [
             {
@@ -103,50 +99,50 @@ export default {
               yAxisIndex: 1,
               itemStyle: {
                 normal: {
-                  color: "#F02FC2"
-                }
+                  color: "#F02FC2",
+                },
               },
-              data: newData.rateData
+              data: newData.rateData,
             },
             {
               name: "厌氧消化处置量",
               type: "bar",
-              barWidth:30,
+              barWidth: 10,
               itemStyle: {
                 normal: {
                   barBorderRadius: 5,
                   color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
                     { offset: 0, color: "#956FD4" },
-                    { offset: 1, color: "#3EACE5" }
-                  ])
-                }
+                    { offset: 1, color: "#3EACE5" },
+                  ]),
+                },
               },
-              data: newData.barData
+              data: newData.barData,
             },
             {
               name: "筛上物外运量",
               type: "bar",
               barGap: "-100%",
-               barWidth:30,
+              barWidth: 10,
               itemStyle: {
                 normal: {
                   barBorderRadius: 5,
                   color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
                     { offset: 0, color: "rgba(156,107,211,0.8)" },
                     { offset: 0.2, color: "rgba(156,107,211,0.5)" },
-                    { offset: 1, color: "rgba(156,107,211,0.2)" }
-                  ])
-                }
+                    { offset: 1, color: "rgba(156,107,211,0.2)" },
+                  ]),
+                },
               },
               z: -12,
-              data: newData.lineData
-            }
-          ]
-        }
+              data: newData.lineData,
+            },
+          ],
+        };
       },
       immediate: true,
-      deep: true
+      deep: true,
     },
   },
-}
+};
 </script>

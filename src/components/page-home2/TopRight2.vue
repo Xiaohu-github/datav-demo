@@ -6,26 +6,23 @@
           <span>
             <icon name="chart-pie" class="text-icon"></icon>
           </span>
-          <span class="fs-xl text mx-2">药耗指标-单耗(元/吨)</span>
+          <span class="fs-xl text mx-2">药耗详情</span>
           <dv-decoration-3 class="dv-dec-3" />
         </div>
       </div>
-      <!-- <Board-2 :numberData='numberData' /> -->
       <div class="d-flex jc-center">
-        <Chart-pie :option='option' />
+        <scrollBoard />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Board2 from "@/components/modules/board2.vue";
-import ChartPie from "@/components/modules/chartPie.vue";
+import scrollBoard from "@/components/page-common/scrollBoard.vue";
 
 export default {
   components: {
-    Board2,
-    ChartPie,
+    scrollBoard,
   },
   data() {
     return {
@@ -118,17 +115,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-$box-width: 100%;
-$box-height: 100%;
-
+<style lang="less">
 #centerRight2 {
   padding: 16px;
-  height: $box-height;
-  width: $box-width;
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
   .bg-color-black {
-    height: calc($box-height - 10px);
+    height: calc(100% - 10px);
     border-radius: 10px;
     .dv-dec-3 {
       position: relative;
@@ -145,7 +139,6 @@ $box-height: 100%;
     overflow: hidden;
     .dv-cap-chart {
       width: 100%;
-      height: calc($box-height - 0px);
     }
   }
 }

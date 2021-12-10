@@ -72,7 +72,7 @@ export default {
   name: "Home",
   components: {
     Headline,
-   TopMiddleBoard,
+    TopMiddleBoard,
     TopLeft,
     TopMiddleBottom,
     CenterRight2,
@@ -100,17 +100,17 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style  lang="less">
 #view {
   width: 100%;
   height: 100%;
   background-color: #030409;
   color: #fff;
   #dv-full-screen-container {
-    background-image: url("../assets/pageBg.png");
+    background-image: url("../assets/bg.png");
     background-size: 100% 100%;
     .main-content {
-      height: calc("100% - 80px");
+      height: calc(~"100% - 80px");
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -122,7 +122,7 @@ export default {
       }
       .mc-down {
         box-sizing: border-box;
-        padding:0px 10px 10px 10px;
+        padding: 0px 10px 10px 10px;
         display: grid;
         grid-template-columns: 6fr 6fr;
         .top-left .top-right {

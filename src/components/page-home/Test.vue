@@ -15,8 +15,9 @@
           <CenterChart :id="rate[1].id" :tips="rate[1].tips" :colorObj="rate[1].colorData" class="chart" />
         </div>
         <div class="water bg-color-black">
-          <span style="font-size: 14px;">筛上物筛出率</span>
+          <span class="fs-xl text mx-2 mb-1 pl-3" style="font-size: 13px;">筛上物筛出率</span>
           <dv-water-level-pond class="dv-wa-le-po" :config="water" />
+          <!-- <ChartCross /> -->
         </div>
       </div>
     </div>
@@ -25,8 +26,13 @@
 
 <script>
 import CenterChart from "@/components/echart/center/centerChartRate";
+import ChartCross from "@/components/modules/chartCross.vue";
 
 export default {
+  components: {
+    CenterChart,
+    ChartCross,
+  },
   data() {
     return {
       ranking: {
@@ -125,9 +131,6 @@ export default {
         },
       ],
     };
-  },
-  components: {
-    CenterChart,
   },
 };
 </script>

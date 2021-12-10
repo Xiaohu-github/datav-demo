@@ -108,17 +108,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-$box-width: 100%;
-$box-height: 100%;
-
+<style lang="less" scoped>
 #centerLeft1 {
   padding: 16px;
-  height: $box-height;
-  width: $box-width;
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
   .bg-color-black {
-    height: calc($box-height - 10px);
+    height: calc(100% - 10px);
     border-radius: 10px;
     .dv-dec-3 {
       position: relative;

@@ -2,14 +2,14 @@
   <div id="center">
     <div class="down">
       <div class="percent d-flex" style="justify-content:space-between;">
-        <div class="item bg-color-black d-flex" style="justify-content: center;align-items:center;flex-direction:column">
+        <div class="item bg-color-black d-flex" style="justify-content: center; flex-direction:column">
           <span class="fs-xl">详细比例</span>
           <div class="d-flex " style="justify-content: center;align-items:center;">
             <ChartRate title="沼渣外运" :id="rate[0].id" :dataValue="rate[0].dataValue" :colorObj="rate[0].colorData" class="chart" />
             <ChartRate title="渗液外排" :id="rate[1].id" :dataValue="rate[1].dataValue" :colorObj="rate[1].colorData" class="chart" />
           </div>
         </div>
-        <div class="item bg-color-black d-flex" style="justify-content: center;align-items:center;flex-direction:column">
+        <div class="item bg-color-black d-flex" style="align-items:center;flex-direction:column">
           <div class="item " style="width:198px">
             <span class="fs-xl text mx-2 mb-1 pl-3">筛上物筛出率</span>
             <dv-water-level-pond :config="water" style="width:200px;height:100px" />
@@ -22,6 +22,7 @@
           <span class="fs-xl text mx-2 mb-1 pl-3">沼气消耗量</span>
           <div class="d-flex" style="flex-direction:column">
             <dv-capsule-chart :config="ranking" style="height:160px" />
+            <!-- <dv-scroll-ranking-board :config="ranking" style=" height:160px" /> -->
           </div>
         </div>
       </div>
@@ -174,7 +175,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" >
 #center {
   display: flex;
   flex-direction: column;

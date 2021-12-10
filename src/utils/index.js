@@ -49,3 +49,46 @@ export function formatTime(time, fmt) {
     return fmt;
   }
 }
+
+export function timeForMat(count) {
+  // 拼接时间
+  let time1 = new Date()
+  time1.setTime(time1.getTime() - (24 * 60 * 60 * 1000))
+  let Y1 = time1.getFullYear()
+  let M1 = ((time1.getMonth() + 1) > 10 ? (time1.getMonth() + 1) : '0' + (time1.getMonth() + 1))
+  let D1 = (time1.getDate() > 10 ? time1.getDate() : '0' + time1.getDate())
+  let timer1 = Y1 + '-' + M1 + '-' + D1 // 当前时间
+  let time2 = new Date()
+  time2.setTime(time2.getTime() - (24 * 60 * 60 * 1000 * count))
+  let Y2 = time2.getFullYear()
+  let M2 = ((time2.getMonth() + 1) > 10 ? (time2.getMonth() + 1) : '0' + (time2.getMonth() + 1))
+  let D2 = (time2.getDate() > 10 ? time2.getDate() : '0' + time2.getDate())
+  let timer2 = Y2 + '-' + M2 + '-' + D2 // 之前的7天或者30天
+  return {
+    t1: timer1,
+    t2: timer2
+  }
+}
+
+//时间戳转日期
+function timestampToTime(timestamp) {
+  var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+  var h = date.getHours() + ':';
+  var m = date.getMinutes() + ':';
+  var s = date.getSeconds();
+  return M + D
+};
+
+//获取指定天数内所有日期
+export function getDaysArray(count) {
+  var dateTime = Date.parse(new Date()) / 1000;; //获取当前日期
+  var dateList = [];
+  for (var i = count; i >= 0; i--) {
+    dateList[i] = timestampToTime(dateTime);
+    dateTime = dateTime - 86400;
+  }
+  return dateList
+}

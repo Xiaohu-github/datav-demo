@@ -28,7 +28,6 @@ export default {
             name: "预处理",
             value: 167,
           },
-
           {
             name: "厌氧",
             value: 67,
@@ -62,7 +61,6 @@ export default {
             name: "污水处理",
             value: 126,
           },
-
           {
             name: "其他用量",
             value: 236,
@@ -75,20 +73,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 #centerRight2 {
-  $box-width: 100%;
-  $box-height: 100%;
   padding: 5px;
-  height: $box-height;
-  width: $box-width;
+  height: 100%;
+  width: 100%;
   border-radius: 5px;
   .bg-color-black {
     padding: 5px;
-    height: $box-height;
-    width: $box-width;
+    height: 100%;
+    width: 100%;
     border-radius: 10px;
-
     .dv-dec-3 {
       position: relative;
       width: 100px;
@@ -104,7 +99,7 @@ export default {
     overflow: hidden;
     .dv-cap-chart {
       width: 100%;
-      height: calc($box-height - 0px);
+      height: calc(100% - 0px);
     }
   }
 }

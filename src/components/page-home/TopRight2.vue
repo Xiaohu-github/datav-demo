@@ -91,7 +91,7 @@ export default {
           {
             name: "decoration ring",
             type: "pie",
-            data: [{ value: 10, radius:["55%", "56%"] }],
+            data: [{ value: 10, radius: ["55%", "56%"] }],
             outsideLabel: {
               show: false,
             },
@@ -119,16 +119,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$box-width: 100%;
-$box-height: 100%;
-
 #centerRight2 {
   padding: 16px;
-  height: $box-height;
-  width: $box-width;
+  height: 100%;
+  width: 100%;
   border-radius: 10px;
   .bg-color-black {
-    height: calc($box-height - 10px);
+    height: calc(100% - 10px);
     border-radius: 10px;
     .dv-dec-3 {
       position: relative;
@@ -145,7 +142,7 @@ $box-height: 100%;
     overflow: hidden;
     .dv-cap-chart {
       width: 100%;
-      height: calc($box-height - 0px);
+      height: calc(100% - 0px);
     }
   }
 }

@@ -11,8 +11,8 @@
         </div>
       </div>
       <Board-2 :numberData='numberData' width="24%" />
-      <div class="d-flex jc-center">
-        <Charts />
+      <div class="d-flex">
+        <dv-scroll-ranking-board :config="ranking" class="mt-5" style="height:220px" />
       </div>
     </div>
   </div>
@@ -41,7 +41,22 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "自来水用量",
+          text: "水用量(m³)",
+        },
+
+        {
+          number: {
+            number: [15],
+            toFixed: 1,
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fill: "#03a9f4",
+              fontWeight: "bold",
+            },
+          },
+          text: "水用量(元)",
         },
         {
           number: {
@@ -55,7 +70,21 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "自来水单耗",
+          text: "水单耗(m³/吨)",
+        },
+        {
+          number: {
+            number: [1144],
+            toFixed: 1,
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fill: "#03a9f4",
+              fontWeight: "bold",
+            },
+          },
+          text: "水单耗(元/吨)",
         },
         {
           number: {
@@ -69,7 +98,7 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "电耗总量",
+          text: "电耗总量(度)",
         },
         {
           number: {
@@ -83,9 +112,85 @@ export default {
               fontWeight: "bold",
             },
           },
-          text: "电单耗",
+          text: "电单耗(度/吨)",
+        },
+        {
+          number: {
+            number: [36],
+            toFixed: 1,
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fill: "#ff9800",
+              fontWeight: "bold",
+            },
+          },
+          text: "柴油用量(升)",
+        },
+        {
+          number: {
+            number: [10],
+            toFixed: 1,
+            textAlign: "center",
+            content: "{nt}",
+            style: {
+              fontSize: 18,
+              fill: "#ff9800",
+              fontWeight: "bold",
+            },
+          },
+          text: "柴油单耗(升/吨)",
         },
       ],
+      ranking: {
+        data: [
+          {
+            name: "预处理",
+            value: 2002,
+          },
+          {
+            name: "厌氧",
+            value: 3003,
+          },
+          {
+            name: "脱水",
+            value: 3511,
+          },
+          {
+            name: "干化",
+            value: 2511,
+          },
+          {
+            name: "除臭",
+            value: 3511,
+          },
+          {
+            name: "沼气预处理",
+            value: 1511,
+          },
+
+          {
+            name: "沼气存储",
+            value: 2503,
+          },
+          {
+            name: "锅炉发电",
+            value: 2113,
+          },
+          {
+            name: "污水处理",
+            value: 1993,
+          },
+          {
+            name: "其他用电",
+            value: 1003,
+          },
+        ],
+        showValue: true,
+        colors: ["#e062ae", "#fb7293", "#e690d1", "#32c5e9", "#96bfff"],
+        unit: "度",
+      },
     };
   },
 
@@ -103,22 +208,23 @@ export default {
         item.number.number[0] += ++index;
         item.number = { ...item.number };
       });
+      this.ranking.data.forEach((item, index) => {
+        item.value += ++index;
+        item = { ...item };
+      });
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-$box-width: 100%;
-$box-height: 100%;
-
+<style lang="less" scoped>
 #centerLeft1 {
   padding: 16px;
-  height: $box-height;
-  width: $box-width;
+  height: 100%;
+  width: 380px;
   border-radius: 10px;
   .bg-color-black {
-    height: calc($box-height - 10px);
+    height: calc(100% - 10px);
     border-radius: 10px;
     .dv-dec-3 {
       position: relative;
@@ -147,6 +253,5 @@ $box-height: 100%;
       }
     }
   }
-
 }
 </style>
