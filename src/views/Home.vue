@@ -80,7 +80,7 @@ export default {
   data() {
     return {
       loading: true,
-      title: "青岛洁宝厨余垃圾处理运营统计",
+      title: "厨余垃圾处理运营统计",
     };
   },
   mounted() {
